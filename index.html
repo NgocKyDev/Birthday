@@ -316,16 +316,31 @@ p {
 }
 
 .profile-img {
-  position: absolute; /* relative to .cake */
-  bottom: 30px;  /* 10px below cake */
-  right: -170px;  /* 70px to the right of cake */
-  width: 150px;
-  height: 150px;
-  border: 5px solid white;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-  border-radius: 10px;
-}
+  position: absolute;
 
+  bottom: 20px;
+  right: -120px;
+
+  width: 120px;
+  height: auto;
+
+  aspect-ratio: 3/4;
+  object-fit: cover;
+
+  border: 5px solid white;
+  border-radius: 12px;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+@media screen and (max-width:768px){
+
+  .profile-img{
+      width:80px;
+      right:-30px;
+      bottom:10px;
+  }
+
+}
 </style>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.1.0/less.min.js"></script>
 </head>
