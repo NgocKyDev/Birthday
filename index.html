@@ -388,15 +388,17 @@ p {
         z-index: 10;
     }
 
-    /* Khu vực Cake: Căn giữa tuyệt đối */
     .cake {
-        position: relative;
-        transform: scale(0.8);
-        margin: 60px auto 0 auto; /* Căn giữa bằng margin */
-        z-index: 5;
-        display: flex;
-        justify-content: center;
-    }
+
+    position: absolute;
+
+    left: 50%;
+    transform: translateX(-50%) scale(0.88);
+
+    margin-top: 80px;
+
+    z-index: 5;
+}
 }
 
 </style>
