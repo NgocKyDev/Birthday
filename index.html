@@ -278,11 +278,19 @@
 .album-photo {
   display: none;
   position: absolute;
-  width: 200px; /* looks like landscape photo */
+
+  width: 26vw;
+  max-width: 120px;
+  min-width: 70px;
+
   height: auto;
-  border: 5px solid white;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  object-fit: cover;
+
+  border: 3px solid white;
   border-radius: 10px;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+
   transition: transform 0.3s ease;
 }
 
@@ -292,16 +300,32 @@
 }
 
 /* Left side */
-.album-left-1 { top: 30px; left: 50px; transform: rotate(-5deg); }
-.album-left-2 { top: 250px; left: 70px; transform: rotate(4deg); }
+.album-left-1 {
+  top: 20px;
+  left: 5px;
+  transform: rotate(-4deg);
+}
 
-/* Right side */
-.album-right-1 { top: 30px; right: 50px; transform: rotate(5deg); }
-.album-right-2 { top: 300px; right: 70px; transform: rotate(-4deg); }
+.album-left-2 {
+  top: 120px;
+  left: 10px;
+  transform: rotate(3deg);
+}
 
+/* RIGHT */
+.album-right-1 {
+  top: 20px;
+  right: 5px;
+  transform: rotate(4deg);
+}
 
-/* ============================================== TEXT
-*/
+.album-right-2 {
+  top: 120px;
+  right: 10px;
+  transform: rotate(-3deg);
+}
+
+/* TEXT */
 h1,
 p {
   font-family: 'Lato', sans-serif;
@@ -309,23 +333,100 @@ p {
   font-style: italic;
   text-align: center;
   width: 100%;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
-.profile-img {
-  position: absolute; /* relative to .cake */
-  bottom: 30px;  /* 10px below cake */
-  right: -170px;  /* 70px to the right of cake */
-  width: 150px;
-  height: 150px;
-  border: 5px solid white;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-  border-radius: 10px;
+h1{
+  font-size: 26px;
 }
 
+p{
+  font-size: 15px;
+  padding: 0 10px;
+}
+
+/* Avatar/Profile */
+.profile-img {
+  position: absolute;
+
+  width: 70px;
+  height: 70px;
+
+  bottom: 10px;
+  right: -25px;
+
+  border: 3px solid white;
+  border-radius: 10px;
+
+  object-fit: cover;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+
+/* ===== iPhone / Mobile ===== */
+@media screen and (max-width: 768px) {
+
+  body{
+    overflow-x: hidden;
+  }
+
+  .cake {
+    width: 220px;
+    height: 220px;
+    margin-left: -110px;
+  }
+
+  .loading{
+    width: 100%;
+    height: auto;
+  }
+
+  .album-photo {
+    width: 24vw;
+    max-width: 90px;
+    min-width: 65px;
+  }
+
+  .album-left-1 {
+    top: 15px;
+    left: 2px;
+  }
+
+  .album-left-2 {
+    top: 105px;
+    left: 5px;
+  }
+
+  .album-right-1 {
+    top: 15px;
+    right: 2px;
+  }
+
+  .album-right-2 {
+    top: 105px;
+    right: 5px;
+  }
+
+  .profile-img {
+    width: 55px;
+    height: 55px;
+
+    right: -10px;
+    bottom: 5px;
+  }
+
+  h1{
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  p{
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 0 15px;
+  }
+}
 </style>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.1.0/less.min.js"></script>
 </head>
