@@ -335,73 +335,107 @@ p {
 
     overflow:hidden;
 }
-@media screen and (max-width: 414px) {
-    /* Container tổng để đảm bảo không bị tràn ngang trên Safari */
-    body {
-        overflow-x: hidden;
+@media screen and (max-width:414px){
+
+    body{
+        overflow-x:hidden;
     }
 
-    /* Ảnh chính: Layout nổi bật ở lớp trên cùng */
-    .profile-img {
-        width: 100px !important;
-        height: 140px !important;
-        right: 5% !important; /* Dùng % để tự thích ứng chiều ngang iPhone */
-        bottom: 15% !important;
-        object-fit: cover;
-        border-radius: 12px;
-        border: 3px solid #fff;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-        z-index: 30; /* Luôn nằm trên các album khác */
+    /* ===== cake ===== */
+
+    .cake{
+
+        position:absolute;
+
+        left:50%;
+        top:220px;
+
+        transform:translateX(-50%) scale(0.82);
+
+        z-index:5;
+
+        display:none;
     }
 
-    /* Nhóm Album: Điều chỉnh khoảng cách để không chạm nhau */
-    
-    /* Album trái trên */
-    .album-left-1 {
-        width: 28%; /* Dùng % để ảnh tự co giãn theo màn hình điện thoại */
-        top: 10%;
-        left: 5%;
-        z-index: 10;
+    /* ===== ảnh person ===== */
+
+    .profile-img{
+
+        width:92px !important;
+        height:132px !important;
+
+        right:-10px !important;
+        bottom:60px !important;
+
+        object-fit:cover;
+
+        border-radius:12px;
+        border:3px solid #fff;
+
+        box-shadow:0 8px 18px rgba(0,0,0,0.2);
+
+        z-index:30;
     }
 
-    /* Album phải trên */
-    .album-right-1 {
-        width: 28%;
-        top: 12%;
-        right: 5%;
-        z-index: 10;
+    /* ===== album ===== */
+
+    .album-photo{
+        border-radius:12px;
+        border-width:4px;
+
+        box-shadow:0 4px 10px rgba(0,0,0,0.18);
     }
 
-    /* Album trái dưới */
-    .album-left-2 {
-        width: 30%;
-        top: 45%; /* Tách xa nhóm trên để tránh đè */
-        left: 8%;
-        z-index: 10;
+    /* trái trên */
+    .album-left-1{
+        width:110px;
+
+        top:90px;
+        left:10px;
+
+        transform:rotate(-6deg);
+
+        z-index:10;
     }
 
-    /* Album phải dưới */
-    .album-right-2 {
-        width: 30%;
-        top: 48%; 
-        right: 8%;
-        z-index: 10;
+    /* phải trên */
+    .album-right-1{
+        width:110px;
+
+        top:105px;
+        right:10px;
+
+        transform:rotate(6deg);
+
+        z-index:10;
     }
 
-    .cake {
+    /* trái dưới */
+    .album-left-2{
+        width:115px;
 
-    position: absolute;
+        top:420px;
+        left:15px;
 
-    left: 50%;
-    transform: translateX(-50%) scale(0.88);
+        transform:rotate(4deg);
 
-    margin-top: 80px;
+        z-index:10;
+    }
 
-    z-index: 5;
+    /* phải dưới */
+    .album-right-2{
+        width:115px;
 
-    display: none;
+        top:450px;
+        right:15px;
+
+        transform:rotate(-5deg);
+
+        z-index:10;
+    }
+
 }
-}
+
 
 </style>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.1.0/less.min.js"></script>
