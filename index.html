@@ -335,55 +335,67 @@ p {
 
     overflow:hidden;
 }
-@media screen and (max-width:414px){
+@media screen and (max-width: 414px) {
+    /* Container tổng để đảm bảo không bị tràn ngang trên Safari */
+    body {
+        overflow-x: hidden;
+    }
 
-    /* ảnh chính */
-    .profile-img{
+    /* Ảnh chính: Layout nổi bật ở lớp trên cùng */
+    .profile-img {
+        width: 100px !important;
+        height: 140px !important;
+        right: 5% !important; /* Dùng % để tự thích ứng chiều ngang iPhone */
+        bottom: 15% !important;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 3px solid #fff;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        z-index: 30; /* Luôn nằm trên các album khác */
+    }
 
-    width:95px !important;
-    height:140px !important;
+    /* Nhóm Album: Điều chỉnh khoảng cách để không chạm nhau */
+    
+    /* Album trái trên */
+    .album-left-1 {
+        width: 28%; /* Dùng % để ảnh tự co giãn theo màn hình điện thoại */
+        top: 10%;
+        left: 5%;
+        z-index: 10;
+    }
 
-    right:-12px !important;
-    bottom:65px !important;
+    /* Album phải trên */
+    .album-right-1 {
+        width: 28%;
+        top: 12%;
+        right: 5%;
+        z-index: 10;
+    }
 
-    object-fit:cover;
+    /* Album trái dưới */
+    .album-left-2 {
+        width: 30%;
+        top: 45%; /* Tách xa nhóm trên để tránh đè */
+        left: 8%;
+        z-index: 10;
+    }
 
-    border-radius:12px;
+    /* Album phải dưới */
+    .album-right-2 {
+        width: 30%;
+        top: 48%; 
+        right: 8%;
+        z-index: 10;
+    }
 
-    z-index:20;
-}
-
-    .album-left-1{
-    width:110px;
-    top:110px;
-    left:15px;
-}
-
-/* album trái dưới */
-.album-left-2{
-    width:115px;
-    top:340px;
-    left:20px;
-}
-
-/* album phải trên */
-.album-right-1{
-    width:115px;
-    top:110px;
-    right:15px;
-}
-
-/* album phải dưới */
-.album-right-2{
-    width:115px;
-    top:360px;
-    right:20px;
-}
-
-    /* cake */
-    .cake{
-        transform:scale(0.82);
-        margin-top:60px;
+    /* Khu vực Cake: Căn giữa tuyệt đối */
+    .cake {
+        position: relative;
+        transform: scale(0.8);
+        margin: 60px auto 0 auto; /* Căn giữa bằng margin */
+        z-index: 5;
+        display: flex;
+        justify-content: center;
     }
 }
 
