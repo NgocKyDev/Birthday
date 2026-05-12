@@ -363,69 +363,103 @@ p{
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
+/* ===== FIX MOBILE LAYOUT ===== */
 
-/* ===== iPhone / Mobile ===== */
-@media screen and (max-width: 768px) {
+html,body{
+    overflow-x:hidden;
+    width:100%;
+    background:#f5dcc0;
+}
 
-  body{
-    overflow-x: hidden;
-  }
+/* container */
+.container{
+    width:100%;
+    padding-left:10px;
+    padding-right:10px;
+}
 
-  .cake {
-    width: 220px;
-    height: 220px;
-    margin-left: -110px;
-  }
+/* banner */
+.bannar{
+    width:95%;
+    max-width:700px;
+    margin-top:20px;
+}
 
-  .loading{
-    width: 100%;
-    height: auto;
-  }
+/* khoảng trống giữa */
+.message{
+    margin-top:40px;
+}
 
-  .album-photo {
-    width: 24vw;
-    max-width: 90px;
-    min-width: 65px;
-  }
+/* ảnh hai bên */
+.album-photo{
+    z-index:2;
+}
 
-  .album-left-1 {
-    top: 15px;
-    left: 2px;
-  }
+/* hint zoom */
+.can-zoom{
+    position:absolute;
+    width:180px;
+    right:10px;
+    top:55%;
+    z-index:3;
+}
 
-  .album-left-2 {
-    top: 105px;
-    left: 5px;
-  }
+/* thanh button dưới */
+.navbar-fixed-bottom{
+    padding:8px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(5px);
+}
 
-  .album-right-1 {
-    top: 15px;
-    right: 2px;
-  }
+/* button */
+.btn{
+    margin-bottom:10px;
+    white-space:normal;
+}
 
-  .album-right-2 {
-    top: 105px;
-    right: 5px;
-  }
+/* ===== MOBILE ===== */
 
-  .profile-img {
-    width: 55px;
-    height: 55px;
+@media screen and (max-width:768px){
 
-    right: -10px;
-    bottom: 5px;
-  }
+    .bannar{
+        width:100%;
+        margin-top:10px;
+    }
 
-  h1{
-    font-size: 20px;
-    line-height: 1.4;
-  }
+    .cake{
+        transform:scale(0.85);
+        margin-top:-20px;
+    }
 
-  p{
-    font-size: 13px;
-    line-height: 1.5;
-    padding: 0 15px;
-  }
+    .message{
+        margin-top:10px;
+    }
+
+    .message p{
+        font-size:15px;
+        line-height:1.8;
+        padding:0 12px;
+    }
+
+    .album-photo{
+        width:22vw;
+        max-width:85px;
+    }
+
+    .can-zoom{
+        width:140px;
+        right:5px;
+        top:48%;
+    }
+
+    .navbar-fixed-bottom{
+        padding:5px;
+    }
+
+    .btn{
+        width:100%;
+        font-size:13px;
+    }
 }
 </style>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.1.0/less.min.js"></script>
